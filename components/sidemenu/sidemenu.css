@@ -1,0 +1,36 @@
+simple-sidemenu {
+    position: fixed;
+    background-color: white;
+    max-width: 100%;
+}
+
+simple-sidemenu.left {
+    left: 0;
+    top:0;
+    height: 100%;
+}
+
+simple-sidemenu.right {
+    right: 0;
+    top:0;
+    height: 100%;
+}
+
+simple-sidemenu.top {
+    left:0;
+    top: 0;
+    width: 100%;
+}
+
+simple-sidemenu.bottom {
+    left:0;
+    bottom: 0;
+    width: 100%;
+}
+
+simple-sidemenu.full {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}

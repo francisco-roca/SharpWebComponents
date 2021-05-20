@@ -1,0 +1,16 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: 25% 1fr 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 33.3333% 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {   
+  .product-grid {
+    grid-template-columns: 50% 1fr;
+  }
+}

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>My proyects</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-utilities@4.1.3/bootstrap-utilities.css">
+
+    <!-- Custom theme -->
+    <style>
+      :root {
+        --primary-color: green;
+      }
+      body {
+        color: #111;
+        font-family: sans-serif;
+        font-size: large;
+        /* max-width: 70ch;
+        margin: auto; */
+        margin-top:5rem;
+        margin-bottom: 5rem;
+      }
+
+      * {
+        box-sizing: border-box;
+        transition: all 0.15s ease;
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+
+      a:hover {
+        color: yellowgreen;
+      }
+
+      h1,h2,h3,h4,h5 {
+        color: #222;
+        font-family: serif;
+      }
+
+      key {
+        border: 1px solid var(--primary-color);
+        padding: .25rem .5rem;
+        color:var(--primary-color);
+      }
+
+      pre {
+        background-color:whitesmoke;
+        color: #222;
+        border-left: 5px solid var(--primary-color);
+      }
+
+
+      [target=_blank]:after {
+          background: transparent url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgYXJpYS1oaWRkZW49InRydWUiIHJvbGU9ImltZyI+PGcgZmlsbD0iY3VycmVudENvbG9yIj48cGF0aCBkPSJNNjkuMzcgNTQuMTF2MjUuODNhMi42MSAyLjYxIDAgMDEtMi42IDIuNkgyMGEyLjYxIDIuNjEgMCAwMS0yLjYtMi42di00Ni44YTIuNjEgMi42MSAwIDAxMi42LTIuNmgzMS40OVYyNEgxNC4xMmEzLjI2IDMuMjYgMCAwMC0zLjI1IDMuMjV2NTguNUEzLjI2IDMuMjYgMCAwMDE0LjEyIDg5aDU4LjVhMy4yNiAzLjI2IDAgMDAzLjI1LTMuMjVWNTQuMTF6Ii8+PHBhdGggZD0iTTUwLjc1IDU0Ljg1bDMwLjYyLTMwLjYyVjUxYTMuOTEgMy45MSAwIDAwMy45IDMuODlBMy44NiAzLjg2IDAgMDA4OS4xMyA1MVYxNC44OEEzLjg2IDMuODYgMCAwMDg1LjI3IDExSDQ5LjEzYTMuODcgMy44NyAwIDEwMCA3LjczaDI2Ljc2TDQ1LjI2IDQ5LjM3YTMuODggMy44OCAwIDEwNS40OSA1LjQ4eiIvPjwvZz48L3N2Zz4K) 0 0 no-repeat;
+          background-size: 16px;
+          content: "";
+          display: inline-block;
+          height: 16px;
+          margin-left: 3px;
+          width: 16px;
+      }
+    </style>
+
+    <!-- Base scripts -->
+    <script>
+      function s(selector) {
+        const selection = document.querySelectorAll(selector);
+
+        if(selection.length == 1) return selection[0];
+        return selection;
+      }
+    </script>
+
+    <!-- Needed for some components -->
+    <style>
+      .d-none {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Components demo</h1>
+    <p>Some more component ideas</p>
+    <ul>
+      <li>Mobile/Desktop menu</li>
+      <li>category tree</li>
+      <li>hover tooltip</li>
+      <li>floating button/window</li>
+      <li>pensar como hacer barra de búsqueda que reciva información y la muestre abajo como un dropdown</li>
+      <li>date</li>
+      <li>current time</li>
+      <li>timer</li>
+      <li>countdown</li>
+    </ul>
+
+    <p>
+      By now there are a few components that if
+      I need to change it won't be very easy to keep they working: dialog, sidemenu and toast
+    </p>
+    
+    <h4>Tabs</h4>
+    <tabs-component tab-default="tab">
+      <div class="headers">
+        <button tab-reference='some'>Tab 1</button>
+        <button tab-reference='cool'>Tab 2</button>
+        <button tab-reference='tab'>Tab 3</button>
+      </div>
+      <div class="panels">
+        <section tab-name="some" style="background-color: red;">
+          <p>Welcome to tab 1</p>
+        </section>
+        <section tab-name="cool" style="background-color: blue;">
+          <p>Welcome to tab 2</p>
+        </section>
+        <section tab-name="tab" style="background-color: green;">
+          <p>Welcome to tab 3</p>
+        </section>
+      </div>
+    </tabs-component>
+
+    <h4>Carousel</h4>
+    <carousel-component>
+      <slot>
+        <img carousel-img src="accounting.jpeg" width="500px" height="250px">      
+        <img carousel-img src="business.png" width="500px" height="250px" class="d-none">
+        <div>
+          <button previous-button></button>
+          <button next-button></button>   
+        </div>
+      </slot>
+    </carousel-component>
+
+    <h4>Left menu with toggle button</h4>
+    <button is="toggle-button" onclick="toggleVisible('#leftMenu')">
+        <span toggle-before>Menu</span>
+        <span toggle-after>X</span>
+    </button>
+    <simple-sidemenu id="leftMenu" class="d-none left" style="background-color: red;">
+      <button onclick="toggleVisible('#leftMenu')">Close</button>
+      <h2>This is the title menu</h2>
+      <p>This is a paragraph inside the menu</p>
+    </simple-sidemenu>
+
+    <h4>Counter</h4>
+    <counter-component>
+        <button decrement>-</button>
+        <span value></span>
+        <button increment>+</button>
+    </counter-component>
+
+    <h4>Dialog menu</h4>
+    <button onclick="toggleVisible('#dialogMenu')">Menu</button>
+    <dialog-component id="dialogMenu" class="d-none" style="background-color: blue;">
+      <div>
+      <button onclick="toggleVisible('#dialogMenu')">Close</button>
+      <h2>This is the title menu</h2>
+      <p>This is a paragraph inside the menu</p>
+    </div>
+    </dialog-component>
+
+    <div>
+        <img src="accounting.jpeg" is="img-expandable" width="500px" height="250px">
+    </div>
+
+    <rating-component not-selected-img="components/rating/star_outline.png" selected-img="components/rating/star.png" hover-img="">
+      <img src="components/star_outline.png" rate-element>
+      <img src="components/star_outline.png" rate-element>
+      <img src="components/star_outline.png" rate-element>
+      <img src="components/star_outline.png" rate-element>
+      <img src="components/star_outline.png" rate-element>
+    </rating-component>
+
+    <button onclick="document.querySelector('toast-component').show()">show toast</button>
+    <toast-component duration="3000">
+        <h2>TOAS TITTLE</h2>
+        <p>Toast paragraph</p>
+    </toast-component>
+
+    <list-component>
+      <li>Pan</li>
+      <li>
+        <div is="product-list-element" class="d-inline">
+          <span>Huevos</span>
+          <button remove-item-button>Remove</button>
+        </div>
+      </li>
+      <li>Leche</li>
+    </list-component>
+
+    <style>
+      .product {
+        padding: .5rem;
+        margin: .25rem;
+      }
+    </style>
+
+    <h2>Smartphones</h2>
+    <list-component class="product-grid">
+      <div class="product border">
+        <div>
+          <img src="accounting.jpeg" width="100%" style="aspect-ratio: 1 / 1;border-radius: .25rem;">
+        </div>
+        <div style="margin-right:auto;">
+          <span class="font-weight-bold">Samsung Galaxy S8+</span>
+        </div>
+        <div>
+          <p style="margin: 0;">899,99 €</p>
+        </div>
+      </div>
+
+      <div class="product border">
+        <div>
+          <img src="accounting.jpeg" width="100%" style="aspect-ratio: 1 / 1;border-radius: .25rem;">
+        </div>
+        <div style="margin-right:auto;">
+          <span class="font-weight-bold">Samsung Galaxy S8+</span>
+        </div>
+        <div>
+          <p style="margin: 0;">899,99 €</p>
+        </div>
+      </div>
+
+      <div class="product border">
+        <div>
+          <img src="accounting.jpeg" width="100%" style="aspect-ratio: 1 / 1;border-radius: .25rem;">
+        </div>
+        <div style="margin-right:auto;">
+          <span class="font-weight-bold">Samsung Galaxy S8+</span>
+        </div>
+        <div>
+          <p style="margin: 0;">899,99 €</p>
+        </div>
+      </div>
+
+      <div class="product border">
+        <div>
+          <img src="accounting.jpeg" width="100%" style="aspect-ratio: 1 / 1;border-radius: .25rem;">
+        </div>
+        <div style="margin-right:auto;">
+          <span class="font-weight-bold">Samsung Galaxy S8+</span>
+        </div>
+        <div>
+          <p style="margin: 0;">899,99 €</p>
+        </div>
+      </div>
+
+      <div class="product border">
+        <div>
+          <img src="accounting.jpeg" width="100%" style="aspect-ratio: 1 / 1;border-radius: .25rem;">
+        </div>
+        <div style="margin-right:auto;">
+          <span class="font-weight-bold">Samsung Galaxy S8+</span>
+        </div>
+        <div>
+          <p style="margin: 0;">899,99 €</p>
+        </div>
+      </div>
+    </list-component>
+
+    <dropdown-component>
+      <button actionable>...</button>
+      <div class="" panel>
+        <h3>My dropdown</h3>
+        <ul>
+          <li><a href="#">Bread</a></li>
+          <li><a href="#">Eggs</a></li>
+          <hr>
+          <li><a href="#">Milk</a></li>
+        </ul>
+        <button>Accept</button>
+        <button>Cancel</button>
+      </div>
+    </dropdown-component>
+
+    <details>
+      <summary>Information1</summary>
+      <p>
+        If your browser supports this element, it should allow
+        you to expand and collapse these details.
+      </p>
+    </details>
+
+
+
+    <script src="components/counter/counter.js"></script>
+    <script src="components/rating/rating.js"></script>
+    <script src="components/tabs/tabs.js"></script>
+    <script src="components/list/list.js"></script>
+    <script src="components/product-list-element/product-list-element.js"></script>
+    <script src="components/carousel/carousel.js"></script>
+    <script src="components/toggle/toggle.js"></script>
+    <link rel="stylesheet" href="components/product-grid/product-grid.css">
+
+    <script src="components/toast/toast.js"></script>
+    <link rel="stylesheet" href="components/toast/toast.css">
+
+    <script src="components/img-expandable/img-expandable.js"></script>
+    <link rel="stylesheet" href="components/img-expandable/img-expandable.css">
+
+    <script src="components/dropdown/dropdown.js"></script>
+    <link rel="stylesheet" href="components/dropdown/dropdown.css">
+
+    <script> // Required for in simple-sidemenu and dialog
+      function toggleVisible(selector) {
+        document.querySelector(selector).classList.toggle('d-none');
+      }
+    </script>
+    <link rel="stylesheet" href="components/sidemenu/sidemenu.css">
+    <link rel="stylesheet" href="components/dialog/dialog.css">
+  </body>
+</html>
+

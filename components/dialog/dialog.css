@@ -1,0 +1,12 @@
+dialog-component {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    min-width: 20ch; /* Longitud mínima */
+    width: 90%; /* Longitud que puede alcanzar */
+    max-width: 75ch; /* Longitud máxima */
+}
+
+/* ADD RESPONSIVENESS */

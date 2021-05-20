@@ -1,0 +1,20 @@
+dropdown-component {
+    position: relative;
+    display: inline-block;
+}
+
+dropdown-component [panel] {
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    z-index: 1;
+    display: none;
+}
+
+dropdown-component [panel].right {
+    right: 0;
+}
+
+dropdown-component [panel].top {
+    bottom: 100%;
+}
