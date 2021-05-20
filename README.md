@@ -12,7 +12,7 @@ Just download the component and reference the .js file in your website. And star
 ```html 
 <script src="<somewhere-path>/toggle.js"></script>
 ```
-  4. Start using your toggle component like this
+  3. Start using your toggle component like this
 
 ```html 
 <button is="toggle-button">
