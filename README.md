@@ -3,6 +3,21 @@ Native WebComponents, maximum modularity, flexibility and extremly lightweight.
 
 The file components.html has an example of every component.
 
+## Components
+ - Carousel
+ - Counter
+ - Toggle
+ - Dialog
+ - Sidemenu
+ - Image expandable
+ - Tabs
+ - Toast
+ - Dropdown
+ - Dynamic list
+ - Rating
+ - Product grid
+ - Product grid element
+
 ## How to use
 Just download the component and reference the .js file in your website. And start using the component
 
