@@ -21,7 +21,7 @@ Just download the component and reference the .js file in your website. And star
 </button>
 ```
 
-The attributes: is, toggle-before and toggle-after are required to use the toggle component.
+The attributes: **is**, **toggle-before** and **toggle-after** are required to use the toggle component.
 
 ## Docs
 Pending
